@@ -1,0 +1,16 @@
+<div class="body-blackout"></div>
+<div class="popup-modal shadow" data-popup-modal="one">
+  <div class="popup-modal__close">X</div>
+  {% if section.settings.show_img %}
+  {% for image in product.images  %}
+  {% if image.alt contains  "sizechart" %}
+ <img src="{{ image | img_url : "original"}}"/>
+ {% endif %}
+  {% endfor %}
+
+  {% else  %} 
+  {{ pages.size-chart.content }}
+
+  {% endif %}
+</div>
+<script src="{{ 'popup.js' | asset_url }}" defer="defer"></script>
